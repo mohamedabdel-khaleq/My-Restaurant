@@ -1,0 +1,248 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+    --main-color: #ff3838;
+    --black: #2c2c54;
+    --light-black: #666;
+    --white: #fff;
+    --light-white: #ccc;
+    --light-bg: #f7f7f7;
+    --border: .1rem solid rgba(0,0,0,.1);
+    --box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+    --text-color: #333;
+}
+
+* {
+    font-family: 'Roboto', sans-serif;
+    margin: 0; padding: 0;
+    box-sizing: border-box;
+    outline: none; border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+}
+
+body {
+    background: var(--light-bg);
+}
+
+section {
+    padding: 5rem 9%;
+}
+
+.header {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    background: var(--white);
+    box-shadow: var(--box-shadow);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 9%;
+}
+
+.header .logo img {
+    height: 4rem;
+}
+
+.header .navbar a {
+    margin-left: 2rem;
+    font-size: 2rem;
+    color: var(--light-black);
+}
+
+.header .navbar a:hover {
+    color: var(--main-color);
+}
+
+.header .menu-icon {
+    display: none;
+    font-size: 3rem;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .header .menu-icon {
+        display: inline-block;
+    }
+
+    .header .navbar {
+        position: absolute;
+        top: 100%; left: 0; right: 0;
+        background: var(--white);
+        box-shadow: var(--box-shadow);
+        padding: 2rem;
+        border-top: var(--border);
+        display: none;
+        flex-direction: column;
+    }
+
+    .header .navbar a {
+        margin: 1rem 0;
+        padding: 1rem 2rem;
+        border-radius: .5rem;
+        background: var(--light-bg);
+    }
+
+    .header .navbar a:hover {
+        background: var(--main-color);
+        color: var(--white);
+    }
+
+    .header .navbar.active {
+        display: flex;
+    }
+}
+
+.home {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 100vh;
+    background: url(imgs/home-bg.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.home .content {
+    max-width: 50rem;
+}
+
+.home .content p {
+    font-size: 2.5rem;
+    color: var(--main-color);
+    font-weight: bolder;
+    padding-top: 1rem;
+}
+
+.home .content h2 {
+    font-size: 3.5rem;
+    color: var(--black);
+    padding: 1rem 0;
+}
+
+.home .content .btn {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 1rem 2rem;
+    font-size: 1.8rem;
+    color: var(--white);
+    background: var(--main-color);
+    cursor: pointer;
+    border-radius: .5rem;
+    transition: .3s linear;
+}
+
+.home .content .btn:hover {
+    background: var(--black);
+    color: var(--white);
+}
+
+.about, .menu, .products, .review, .contact, .blogs {
+    text-align: center;
+}
+
+.about .heading, .menu .heading, .products .heading, .review .heading, .contact .heading, .blogs .heading {
+    font-size: 3.5rem;
+    color: var(--black);
+    padding: 1rem 0;
+    margin-bottom: 3rem;
+}
+
+.about .content h3, .menu .box h3, .products .box h3, .review .box h3, .blogs .box h3 {
+    font-size: 2.5rem;
+    color: var(--black);
+    padding: 1rem 0;
+}
+
+.about .content p, .menu .box p, .products .box p, .review .box p, .blogs .box p {
+    font-size: 1.8rem;
+    color: var(--text-color);
+    padding: 1rem 0;
+}
+
+.about .image img, .menu .box img, .products .box img, .review .box img, .blogs .box img {
+    max-width: 100%;
+    height: auto;
+}
+
+.about .content .btn, .menu .box .btn, .products .box .btn, .review .box .btn, .blogs .box .btn {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 1rem 2rem;
+    font-size: 1.8rem;
+    color: var(--white);
+    background: var(--main-color);
+    cursor: pointer;
+    border-radius: .5rem;
+    transition: .3s linear;
+}
+
+.about .content .btn:hover, .menu .box .btn:hover, .products .box .btn:hover, .review .box .btn:hover, .blogs .box .btn:hover {
+    background: var(--black);
+    color: var(--white);
+}
+
+.menu .box-container, .products .box-container, .review .box-container, .blogs .box-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.menu .box, .products .box, .review .box, .blogs .box {
+    flex: 1 1 30rem;
+    border: var(--border);
+    border-radius: .5rem;
+    padding: 2rem;
+    box-shadow: var(--box-shadow);
+}
+
+.menu .box .price, .products .box .price {
+    font-size: 2.5rem;
+    color: var(--main-color);
+    padding-top: 1rem;
+}
+
+.contact form {
+    max-width: 70rem;
+    margin: 0 auto;
+}
+
+.contact form .box {
+    width: 100%;
+    margin: 1rem 0;
+    padding: 1.2rem 1.4rem;
+    border-radius: .5rem;
+    background: var(--light-white);
+    color: var(--black);
+    font-size: 1.8rem;
+    border: var(--border);
+}
+
+.contact form .btn {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 1rem 2rem;
+    font-size: 1.8rem;
+    color: var(--white);
+    background: var(--main-color);
+    cursor: pointer;
+    border-radius: .5rem;
+    transition: .3s linear;
+}
+
+.contact form .btn:hover {
+    background: var(--black);
+    color: var(--white);
+}
+
+
+
